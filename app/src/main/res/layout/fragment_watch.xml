@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/watch_top"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="?attr/actionBarSize"
+        android:src="@drawable/stockbit"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_menu"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="@id/watch_top"
+        app:layout_constraintBottom_toBottomOf="@id/watch_top"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_feed"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="@id/watch_top"
+        app:layout_constraintBottom_toBottomOf="@id/watch_top"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/watch_list_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_watchlist"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12ssp"
+        app:icon="@drawable/ic_expand"
+        app:iconTint="@color/black"
+        app:iconGravity="end"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/watch_top"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/watch_add_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_symbol"
+        android:textColor="@color/grey"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_10ssp"
+        app:icon="@drawable/ic_add_circle"
+        app:iconSize="@dimen/_14sdp"
+        app:iconTint="@color/grey"
+        app:iconGravity="start"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/watch_top"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/separate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/lightGrey"
+        app:layout_constraintTop_toBottomOf="@id/watch_list_btn"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/watch_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/separate"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/watch_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_watch"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/watch_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/green"
+        app:layout_constraintTop_toTopOf="@id/watch_swipe"
+        app:layout_constraintBottom_toBottomOf="@id/watch_swipe"
+        app:layout_constraintStart_toStartOf="@id/watch_swipe"
+        app:layout_constraintEnd_toEndOf="@id/watch_swipe"/>
+
+    <TextView
+        android:id="@+id/watch_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_not_found"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/watch_swipe"
+        app:layout_constraintBottom_toBottomOf="@id/watch_swipe"
+        app:layout_constraintStart_toStartOf="@id/watch_swipe"
+        app:layout_constraintEnd_toEndOf="@id/watch_swipe"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

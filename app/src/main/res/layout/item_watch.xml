@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_10sdp"
+    android:paddingStart="@dimen/_5sdp"
+    android:paddingEnd="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/item_watch_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="AALI"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_watch_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Astra Agro Lestari Tbk."
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/grey"
+        android:layout_marginTop="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/item_watch_id"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_watch_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="9,050"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_watch_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="+200 (+2.26%)"
+        android:textSize="@dimen/_9ssp"
+        android:textColor="@color/green"
+        android:layout_marginTop="@dimen/_2sdp"
+        app:layout_constraintTop_toBottomOf="@id/item_watch_id"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
